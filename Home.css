@@ -7,43 +7,86 @@ html {
 body {
   font-size: 1.5rem; /* 15px  */
   padding: 1rem; /* 10px  */
-  margin-left:10rem;
-  margin-right:10rem;
+  margin: 0 auto;
+}
+
+* {
+  line-height: 2.4rem
+}
+
+#wrapper {
+  min-width: 64rem;
+  max-width: 96rem;
+  margin:0 auto;
+}
+
+/*********************************************
+ * CLEARFIX
+ *********************************************/
+
+.clearfix:after { 
+  content: ""; 
+  display: table; 
+  clear: both; 
+} 
+.clearfix { 
+  zoom: 1; 
+}
+
+/*********************************************
+ * HEADER
+ *********************************************/
+header {
+  height: 18rem;
+  margin: 0 auto;
+  font-size: 32px;
+  font-family: Arial;
+  position: relative;
+}
+
+header h1 a {
+  position: absolute;
+  color: #706041;
+  text-decoration: none;
 }
 
 /* LOGO */
-#logo{
-    width:20rem; /* you can use % */
-    height: auto;
-    margin: auto;
+img#logo{
+  margin: 0 auto;
+  width: 7.5rem;
 }
-/* float li right */
-ul#mainmenu li {
-  float: right;
+
+#mainmenu {
+  background-color: #FFF;
+  font: 12px Verdana, sans-serif; 
+  width: 69.5rem;
+  height: 2.4rem;
+  position: absolute;
+  margin-left: 65rem;
+  margin-top: 4rem;
 }
-/* the rest is design */
-ul#mainmenu {
-  list-style: none;
-  font: 12px Verdana, sans-serif;
-  padding: 0;
-  margin-top: -15rem;
+
+#mainmenu li {
+  display: inline-block;
 }
-ul#mainmenu a {
-  display: block;
-  height: 24px;
-  line-height: 24px;
-  width: 149px;
-  padding: 2px 5px;
+
+#mainmenu li a {
   color: #333;
   text-decoration: none;
+  float: right;
+  height: 24px;
+  line-height: 24px;
+  padding: 0rem 2rem;
 }
-ul#mainmenu a:hover {
+
+#mainmenu li a:hover {
   background-color: rgb(236,217,180);
 }
 
-ul#mainmenu a:active {
+#mainmenu li a:active {
   background-color: rgb(224,192,130);
 }
+
 
 #content {
   margin-top: 15rem;
@@ -54,10 +97,13 @@ ul#mainmenu a:active {
   margin-left: 90rem;
   margin-right: 13rem;
 }
-
 /* ICON MENU GENERAL SECTION */
+
+ul#iconmenu {
+  float: right;
+}
 #iconmenu {
-  margin: 1rem auto;
+  margin: 0rem auto;
 }
 #iconmenu a:hover {
   border-radius: 3rem;
@@ -72,10 +118,9 @@ ul#mainmenu a:active {
 #iconmenu a {
   width: 8.4rem;
   height: 8.4rem;
-  display: block;
+  display: inline-block;
   background-image: url(images/sprites.png);
   background-repeat: no-repeat;
-  background-size: 92.4rem 25.2rem;
 }
 
 #iconmenu .facebook { background-position: 0 0;}
