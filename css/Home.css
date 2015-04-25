@@ -1,0 +1,206 @@
+
+@font-face {
+  font-family: forum;
+  src: url("font/FORUM.otf") format("opentype");
+}
+
+
+/* ===========================================
+   Common
+   =========================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+body > * {
+  font-size: 1.2rem; /* placed here instead of in body -> fix for Chrome bug */
+}
+
+body {
+  background-color: #fff;
+  font-family: 'forum';
+  color: #424849;
+}
+
+/* ===========================================
+   Wrapper
+   =========================================== */
+#wrapper {
+  width: 96rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*********************************************
+ * HEADER
+ *********************************************/
+#wrapper > header {
+  position: relative;
+}
+
+#wrapper > header h1 a {
+  background-image: url(../img/logo.png);
+  width: 20rem;
+  height: 10rem;
+  position: absolute;
+  margin-top: 3rem;
+  margin-left: -5rem;
+  float: left;
+  background-repeat: no-repeat;
+}
+
+.logoTitle {
+  position: absolute;
+  margin-top: 7rem;
+  font-size: 3.2rem;
+  text-decoration: none;
+  color: #706041;
+  margin-left: 8.5rem;
+  font-weight: 200;
+}
+
+/* menu */
+
+nav ul {
+  list-style: none;
+  background-color: #FFF;
+  width: 70rem;
+  position: relative;
+  float: right;
+  margin-top: 7.5rem;
+  margin-right: 0rem;
+  vertical-align: middle;
+  text-align: right;
+  letter-spacing: 0.1rem;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav ul a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #333;
+  background-color: #fff;
+  padding: 0.6rem 2rem;
+  height: 2.4rem;
+  line-height: 2.4rem;
+
+}
+
+nav ul a:hover {
+  background: rgb(224,192,130);
+}
+
+nav ul .active a {
+  background: rgb(236,217,180);
+}
+
+/* ===========================================
+   Main content
+   =========================================== */
+
+#content {
+  height: 55rem;
+  margin-top: 3rem;
+}
+
+/* ===========================================
+   Main content > imgages
+   =========================================== */
+
+#rasterImages {
+  position: absolute;
+  display: block;
+  float: left;
+}
+
+/* ===========================================
+   Main content > TEXT
+   =========================================== */
+
+#contentIntro {
+  height: 42rem;
+  width: 23.5rem;
+  position: absolute;
+  background-color: #fff;
+  margin-left: 66.5rem;
+}
+
+#contentIntro h2 {
+  font-size: 4.1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 5rem;
+  color: #4F2400;
+  font-weight: bold;
+  font-family: 'forum';
+}
+
+/* ===========================================
+   Footer
+   =========================================== */
+
+#wrapper > footer {
+  border-top: 1px #eeabbd dashed;
+  background-color: #f2efef;
+  font-size: 1.1rem;
+  float: left;
+  width: 96rem;
+}
+
+#wrapper > footer ul {
+  list-style: none;
+  height: 3rem;
+  line-height: 3rem;
+  margin-left: 26rem;
+}
+
+#wrapper > footer li {
+  padding: 0 1rem;
+  display: inline-block;
+}
+
+#wrapper > footer a:link, ul#footer a:visited {
+  color: #2f2626;
+}
+
+#wrapper > footer a:hover{
+  text-decoration: none;
+}
+
+/* ICON MENU GENERAL SECTION */
+
+ul#iconmenu {
+  float: right;
+}
+#iconmenu {
+  margin: 0rem auto;
+}
+#iconmenu a:hover {
+  border-radius: 1.5rem;
+}
+
+#iconmenu li {
+  display: inline-block;
+  list-style: none;
+}
+
+/* HOVER SECTION L&B=8.4rem */
+#iconmenu a {
+  width: 4.2rem;
+  height: 4.2rem;
+  display: inline-block;
+  background-image: url(images/sprites.png);
+  background-repeat: no-repeat;
+}
+
+#iconmenu .facebook { background-position: 0 0;}
+#iconmenu .facebook:hover { background-position:  0 -4.2rem;}
+
+#iconmenu .twitter { background-position: -33.6rem 0;}
+#iconmenu .twitter:hover { background-position: -33.6rem -4.2rem; }
+
+#iconmenu .googlePlus { background-position: -12.6rem 0;}
+#iconmenu .googlePlus:hover { background-position: -12.6rem -4.2rem;}

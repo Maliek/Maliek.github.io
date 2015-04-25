@@ -2,35 +2,37 @@
 <html lang="en">
 <head>
 	<title>Home - Kjen Relaes</title>
+	<link rel="stylesheet" href="./css/Home.css">
+	<link rel="stylesheet" href="./css/start.css">
 	<meta charset="utf-8" />
-	<link rel="stylesheet" href="Home.css">
-	<style>
-		.structural {
-			position: absolute;
-			left: -9999px;
-		}
-	</style>
-
 </head>
 <body>
 
 	<div id="wrapper">
-		<header>
-			<h1><a href="index.html" title="Home"><img src="images/logo.png" alt="Kjen Relaes" id="logo"></a></h1>
+
+		<!-- header -->
+		<header class="clearfix">
+			<h1><a href="index.html" class="ir">Kjen Relaes</a></h1>
+			<h2><a href="index.html" class="logoTitle">Kjen Relaes</a></h2>
 			<nav>
 				<h2 class="structural">Hoofdmenu</h2>
-				<ul id="mainmenu">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="AboutUs.html">About Us</a></li>
-					<li><a href="Services.html">Services</a></li>
-					<li><a href="Contact.html">Contact</a></li>
+				<ul>
+					<a href="index.html"><li class="active">Home</li></a><a href="AboutUs.html"><li>About Us</li></a><a href="Services.html"><li>Services</li></a><a href="Contact.html"><li>Contact</li></a>
 				</ul>
 			</nav>
 		</header>
 
 		<div id="content" class="clearfix">
-			<section>
-				<h2>Uw tuin, onze zorgen!</h2>
+			<!-- images -->
+			<section id="rasterImages">
+				<h2 class="structural">Images</h2>
+				<img src="img/garden1.jpg">
+				<img src="img/garden2.jpg">
+				<img src="img/garden3.jpg">
+				<img src="img/garden4.jpg">
+			</section>
+			<section id="contentIntro">
+				<h2>uw tuin, onze zorgen!</h2>
 				<p>
 					Tuin aanleggen of heeft uw tuin onderhoud nodig? Voor al je tuinproblemen moet je bij Nico Van Knosselaar zijn. We behandelen uw tuin zoals het de onze zou zijn.
 				</p>
@@ -43,11 +45,13 @@
 			<p>
 				&copy; by Nico Van Knosselaar N.V. Created by Meersschaert Maliek.
 			</p>
+			<div class="icon">
 			<ul id="iconmenu">
 				<li><a class="facebook" href="www.facebook.com"></a></li>
 				<li><a class="twitter" href="www.twitter.com"></a></li>
 				<li><a class="googlePlus" href="https://plus.google.com/"></a></li>
 			</ul>
+		</div>
 		</footer>
 	</div>
 </body>
