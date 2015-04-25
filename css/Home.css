@@ -4,7 +4,6 @@
   src: url("font/FORUM.otf") format("opentype");
 }
 
-
 /* ===========================================
    Common
    =========================================== */
@@ -135,7 +134,21 @@ nav ul .active a {
   padding-top: 5rem;
   color: #4F2400;
   font-weight: bold;
-  font-family: 'forum';
+}
+
+#contentIntro p {
+  font-size: 1.5rem;
+  color: #333333;
+  line-height: 2rem;
+  font-family: 'spinnaker';
+  text-align: center;
+  padding: 0 2.5rem;
+  margin-top: 2rem;
+}
+
+#contentIntro figure {
+  margin-left: 10rem;
+  margin-top: 4rem;
 }
 
 /* ===========================================
