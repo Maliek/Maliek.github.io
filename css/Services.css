@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: forum;
   src: url("font/FORUM.otf") format("opentype");
@@ -97,63 +96,18 @@ nav ul .active a {
 }
 
 /* ===========================================
-   Main content
-   =========================================== */
+Main content
+=========================================== */
 
 #content {
-  height: 55rem;
+  height: 133rem;
   margin-top: 3rem;
 }
 
-/* ===========================================
-   Main content > imgages
-   =========================================== */
-
-#rasterImages {
-  position: absolute;
-  display: block;
-  float: left;
-}
 
 /* ===========================================
-   Main content > TEXT
-   =========================================== */
-
-#contentIntro {
-  height: 42rem;
-  width: 23.5rem;
-  position: absolute;
-  background-color: #fff;
-  margin-left: 66.5rem;
-}
-
-#contentIntro h2 {
-  font-size: 4.1rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 5rem;
-  color: #4F2400;
-  font-weight: bold;
-}
-
-#contentIntro p {
-  font-size: 1.5rem;
-  color: #333333;
-  line-height: 2rem;
-  font-family: 'spinnaker';
-  text-align: center;
-  padding: 0 2.5rem;
-  margin-top: 2rem;
-}
-
-#contentIntro figure {
-  margin-left: 10rem;
-  margin-top: 4rem;
-}
-
-/* ===========================================
-   Footer
-   =========================================== */
+Footer
+=========================================== */
 
 #wrapper > footer {
   font-size: 1.3rem;

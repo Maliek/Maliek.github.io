@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: forum;
   src: url("font/FORUM.otf") format("opentype");
@@ -101,56 +100,87 @@ nav ul .active a {
    =========================================== */
 
 #content {
-  height: 55rem;
+  height: 100rem;
   margin-top: 3rem;
 }
 
-/* ===========================================
-   Main content > imgages
-   =========================================== */
+#content section img {
+  margin-top: 0.1rem;
+}
 
-#rasterImages {
-  position: absolute;
-  display: block;
+#content #left {
+  width: 18rem;
   float: left;
 }
 
-/* ===========================================
-   Main content > TEXT
-   =========================================== */
-
-#contentIntro {
-  height: 42rem;
-  width: 23.5rem;
-  position: absolute;
-  background-color: #fff;
-  margin-left: 66.5rem;
-}
-
-#contentIntro h2 {
-  font-size: 4.1rem;
-  text-transform: uppercase;
-  text-align: center;
-  padding-top: 5rem;
-  color: #4F2400;
+#content #left p {
+  font-size: 2.8rem;
+  color: #E0C082;
+  margin-top: 2rem;
   font-weight: bold;
 }
 
-#contentIntro p {
+#content #left #loveletters {
+  margin-top: 9.5rem;
+}
+
+#content #middle {
+  width: 54rem;
+  float: left;
+}
+
+#content #middle p {
+  font-family: 'spinnaker';
   font-size: 1.5rem;
   color: #333333;
-  line-height: 2rem;
-  font-family: 'spinnaker';
-  text-align: center;
-  padding: 0 2.5rem;
+  line-height: 1.8rem;
   margin-top: 2rem;
+  white-space: normal;
 }
 
-#contentIntro figure {
-  margin-left: 10rem;
-  margin-top: 4rem;
+#content #middle p::after {
+  content: url(../img/line.png);
+  margin-left: -0.5rem;
 }
 
+#content #middle p:last-child:after {
+  content: '';
+}
+
+#content #middle p:first-child:after {
+  content: "";
+}
+
+#content #middle p:nth-child(2) {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+#content #right {
+  width: 17.5rem;
+  float: right;
+}
+
+#content #right p:first-child {
+  font-size: 2.7rem;
+  color: #E0C082;
+  border-bottom: thin solid #E0C082;
+  font-family: 'forum';
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+#content #right p {
+  font-family: 'spinnaker';
+  font-size: 1.5rem;
+  color: #333333;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+#content #right img {
+  margin-bottom: 1rem;
+}
 /* ===========================================
    Footer
    =========================================== */
