@@ -104,7 +104,100 @@ Main content
   margin-top: 3rem;
 }
 
+#content section img {
+  margin-top: 0.1rem;
+}
 
+#content #left {
+  width: 18rem;
+  float: left;
+}
+
+#content #left h2 {
+  font-size: 2.8rem;
+  color: #E0C082;
+  margin-top: 2rem;
+  font-weight: bold;
+}
+
+#content #middle {
+  width: 54rem;
+  float: left;
+}
+
+#content #middle p {
+  font-family: 'spinnaker';
+  font-size: 1.5rem;
+  color: #333333;
+  line-height: 1.8rem;
+  margin-top: 2rem;
+  white-space: normal;
+}
+
+#content #middle .post {
+  height: 36.5rem;
+  width: 25.5rem;
+  float: left;
+  margin-bottom: 4rem;
+}
+
+#content #middle .post:nth-child(even) {
+  float: right;
+}
+
+#content #middle section h2 {
+  color: #fff;
+  background-color: rgb(224,192,130);
+  text-align: center;
+  margin-top: 3rem;
+  padding: 0.5rem;
+}
+
+#content #middle section img {
+  margin-top: 1rem;
+}
+
+#content #middle section p {
+  font-family: 'spinnaker';
+  font-size: 1.5rem;
+  color: #333333;
+  line-height: 1.8rem;
+  margin-top: 0rem;
+  white-space: normal;
+}
+
+#content #middle section button {
+  background-color: grey;
+  color: #fff;
+  width: 11.5rem;
+  height: 3rem;
+  border: none;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  letter-spacing: 0.3rem;
+}
+
+#content #right {
+  width: 17.5rem;
+  float: right;
+}
+
+#content #right h2 {
+  font-size: 2.7rem;
+  color: #E0C082;
+  border-bottom: thin solid #E0C082;
+  font-family: 'forum';
+  margin-top: 10.5rem;
+  font-weight: bold;
+}
+
+#content #right p {
+  font-family: 'spinnaker';
+  font-size: 1.5rem;
+  color: #333333;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
 /* ===========================================
 Footer
 =========================================== */
