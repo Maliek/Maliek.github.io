@@ -107,65 +107,83 @@ Main content
   margin-top: 0.1rem;
 }
 
-#content #left {
-  width: 18rem;
-  float: left;
-}
-
-#content #left h2 {
+#content section h2 {
   font-size: 2.8rem;
   color: #E0C082;
   margin-top: 2rem;
   font-weight: bold;
 }
 
-#content #middle {
-  width: 54rem;
+#content #left {
   float: left;
 }
 
-#content #middle p {
-  font-family: 'spinnaker';
+#content #left section h3 {
+  font-size: 1.5rem;
+  color: #456660;
+  font-weight: bold;
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  float: 
+}
+
+#content #left section p {
   font-size: 1.5rem;
   color: #333333;
-  line-height: 1.8rem;
-  margin-top: 2rem;
-  white-space: normal;
+  margin-left: 2rem;
 }
 
-#content #middle .post {
-  height: 36.5rem;
-  width: 25.5rem;
+#content #middle {
   float: left;
-  margin-bottom: 4rem;
 }
 
-#content #middle .post:nth-child(even) {
-  float: right;
+#content #middle h3 {
+  font-size: 1.5rem;
+  color: #666666;
+  font-weight: bold;
+  margin-left: 6rem;
+  margin-top: 1.5rem;
 }
 
-#content #middle section h2 {
-  color: #fff;
-  background-color: rgb(224,192,130);
-  text-align: center;
-  margin-top: 3rem;
-  padding: 0.5rem;
+#content #middle a:first-of-type {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: 6rem;
 }
 
-#content #middle section img {
+#content #middle a img {
+  width: 2.2rem;
+  height: 2.2rem;
+  margin-left: 0.2rem;
   margin-top: 1rem;
 }
 
-#content #middle section p {
-  font-family: 'spinnaker';
-  font-size: 1.5rem;
-  color: #333333;
-  line-height: 1.8rem;
-  margin-top: 0rem;
-  white-space: normal;
+#content #right form fieldset dl {
+  float: right;
+  margin-top: 1.5rem;
 }
 
-#content #middle section button {
+#content #right form fieldset dl dd input {
+  background-color: rgb(236,217,180);
+  border: none;
+  font-size: 1.3rem;
+  width: 31rem;
+  height: 3.5rem;
+  margin: 0.2rem 0;
+  padding: 0.2rem;
+}
+
+#content #right form fieldset dl dd textarea {
+  background-color: rgb(236,217,180);
+  border: none;
+  font-size: 2rem;
+  width: 31rem;
+  margin: 0.2rem 0;
+  height: 13rem;
+  padding: 0.2rem;
+}
+
+#content #right input {
   background-color: grey;
   color: #fff;
   width: 11.5rem;
@@ -173,29 +191,8 @@ Main content
   border: none;
   text-transform: uppercase;
   margin-top: 1rem;
-  letter-spacing: 0.3rem;
-}
-
-#content #right {
-  width: 17.5rem;
+  letter-spacing: 0.1rem;
   float: right;
-}
-
-#content #right h2 {
-  font-size: 2.7rem;
-  color: #E0C082;
-  border-bottom: thin solid #E0C082;
-  font-family: 'forum';
-  margin-top: 10.5rem;
-  font-weight: bold;
-}
-
-#content #right p {
-  font-family: 'spinnaker';
-  font-size: 1.5rem;
-  color: #333333;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
 }
 /* ===========================================
 Footer
