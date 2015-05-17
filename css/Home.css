@@ -25,9 +25,9 @@ body {
    Wrapper
    =========================================== */
 #wrapper {
-  width: 96rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  min-width: 32rem;
+  max-width: 96rem;
 }
 
 /*********************************************
@@ -39,19 +39,18 @@ body {
 
 #wrapper > header h1 a {
   background-image: url(../img/logo.png);
-  width: 20rem;
+  width: 10rem;
   height: 10rem;
   position: absolute;
   margin-top: 3rem;
-  margin-left: -5rem;
   float: left;
   background-repeat: no-repeat;
 }
 
 .logoTitle {
   position: absolute;
-  margin-top: 7rem;
-  font-size: 3.2rem;
+  margin-top: 4.5rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: #706041;
   margin-left: 8.5rem;
@@ -63,29 +62,24 @@ body {
 nav ul {
   list-style: none;
   background-color: #FFF;
-  width: 70rem;
   position: relative;
-  float: right;
-  margin-top: 7.5rem;
-  margin-right: 0rem;
+  float: left;
+  margin-top: 9rem;
   vertical-align: middle;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.1rem;
 }
 
 nav li {
-  display: inline-block;
+  display: block;
+  margin: 0.5rem 0;
 }
 
 nav ul a {
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   text-decoration: none;
   color: #333;
   background-color: #fff;
-  padding: 0.6rem 2rem;
-  height: 2.4rem;
-  line-height: 2.4rem;
-
 }
 
 nav ul a:hover {
@@ -101,7 +95,7 @@ nav ul .active a {
    =========================================== */
 
 #content {
-  height: 55rem;
+  height: 75rem;
   margin-top: 3rem;
 }
 
@@ -110,9 +104,12 @@ nav ul .active a {
    =========================================== */
 
 #rasterImages {
-  position: absolute;
-  display: block;
   float: left;
+  max-width: 36rem;
+}
+
+#rasterImages img {
+  width: 30rem; 
 }
 
 /* ===========================================
@@ -120,35 +117,34 @@ nav ul .active a {
    =========================================== */
 
 #contentIntro {
-  height: 42rem;
-  width: 23.5rem;
+  width: 17rem;
   position: absolute;
   background-color: #fff;
-  margin-left: 66.5rem;
+  margin-top: 5rem;
+  margin-left: 12rem;
 }
 
 #contentIntro h2 {
-  font-size: 4.1rem;
+  font-size: 2rem;
   text-transform: uppercase;
   text-align: center;
-  padding-top: 5rem;
+  padding-top: 1rem;
   color: #4F2400;
   font-weight: bold;
 }
 
 #contentIntro p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #333333;
-  line-height: 2rem;
+  line-height: 1rem;
   font-family: 'spinnaker';
   text-align: center;
-  padding: 0 2.5rem;
-  margin-top: 2rem;
+  padding: 0 1.25rem;
+  margin-top: 1rem;
 }
 
 #contentIntro figure {
-  margin-left: 10rem;
-  margin-top: 4rem;
+  display: none;
 }
 
 /* ===========================================
@@ -156,10 +152,11 @@ nav ul .active a {
    =========================================== */
 
 #wrapper > footer {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   float: left;
-  width: 96rem;
-  height: 4.5rem;
+  width: 30rem;
+  position: absolute;
+  height: 10rem;
   margin-top: 1.1rem;
   background-color: rgb(224,192,130);
 }
@@ -173,7 +170,175 @@ nav ul .active a {
 #wrapper > footer a img {
   width: 2.2rem;
   height: 2.2rem;
-  float: right;
-  margin-top: -2rem;
-  margin-right: 1rem;
+  float: left;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+/* ===============
+   Media queries
+   =============== */
+
+@media (min-width: 62.5em) {
+  #wrapper {
+    margin: 0 auto;
+    min-width: 32rem;
+    max-width: 96rem;
+  }
+
+  /*********************************************
+   * HEADER
+   *********************************************/
+  #wrapper > header {
+    position: relative;
+  }
+
+  #wrapper > header h1 a {
+    background-image: url(../img/logo.png);
+    width: 20.8%;
+    height: 10rem;
+    position: absolute;
+    margin-top: 3rem;
+    margin-left: -5rem;
+    float: left;
+    background-repeat: no-repeat;
+  }
+
+  .logoTitle {
+    position: absolute;
+    margin-top: 7rem;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: #706041;
+    margin-left: 8.5rem;
+    font-weight: 200;
+  }
+
+  /* menu */
+
+  nav ul {
+    list-style: none;
+    background-color: #FFF;
+    width: 72.91%;
+    position: relative;
+    float: right;
+    margin-top: 7.5rem;
+    margin-right: 0rem;
+    vertical-align: middle;
+    text-align: right;
+    letter-spacing: 0.1rem;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  nav ul a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 0.6rem 2rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+
+  }
+
+  nav ul a:hover {
+    background: rgb(224,192,130);
+  }
+
+  nav ul .active a {
+    background: rgb(236,217,180);
+  }
+
+  /* ===========================================
+     Main content
+     =========================================== */
+
+  #content {
+    height: 55rem;
+    margin-top: 3rem;
+  }
+
+  /* ===========================================
+     Main content > imgages
+     =========================================== */
+
+  #rasterImages {
+    float: left;
+    max-width: 100%;
+    height: auto;
+  }
+
+  #rasterImages img {
+    width: auto; 
+    height: auto;
+  }
+
+  /* ===========================================
+     Main content > TEXT
+     =========================================== */
+
+  #contentIntro {
+    height: 45rem;
+    width: 23rem;
+    position: absolute;
+    background-color: #fff;
+    margin-left: 66.5rem;
+    margin-top: 0rem;
+  }
+
+  #contentIntro h2 {
+    font-size: 4.1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 5rem;
+    color: #4F2400;
+    font-weight: bold;
+  }
+
+  #contentIntro p {
+    font-size: 1.5rem;
+    color: #333333;
+    line-height: 2rem;
+    font-family: 'spinnaker';
+    text-align: center;
+    padding: 0 2.5rem;
+    margin-top: 2rem;
+  }
+
+  #contentIntro figure {
+    margin-left: 10rem;
+    margin-top: 4rem;
+  }
+
+  /* ===========================================
+     Footer
+     =========================================== */
+
+  #wrapper > footer {
+    font-size: 1.3rem;
+    float: left;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 1.1rem;
+    background-color: rgb(224,192,130);
+  }
+
+  #wrapper > footer p {
+    padding-top: 1.5rem;
+    padding-left: 1.2rem;
+    color:#FFF;
+  }
+
+  #wrapper > footer a img {
+    width: 2.2rem;
+    height: 2.2rem;
+    float: right;
+    margin-top: -2rem;
+    margin-right: 1rem;
+    margin-left: 0rem;
+  }
+
 }
