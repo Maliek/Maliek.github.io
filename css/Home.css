@@ -39,21 +39,20 @@ body {
 
 #wrapper > header h1 a {
   background-image: url(../img/logo.png);
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   position: absolute;
   margin-top: 3rem;
-  float: left;
   background-repeat: no-repeat;
 }
 
 .logoTitle {
   position: absolute;
-  margin-top: 4.5rem;
-  font-size: 1.8rem;
+  margin-top: 5.5rem;
+  font-size: 2.8rem;
   text-decoration: none;
   color: #706041;
-  margin-left: 8.5rem;
+  margin-left: 10rem;
   font-weight: 200;
 }
 
@@ -64,7 +63,7 @@ nav ul {
   background-color: #FFF;
   position: relative;
   float: left;
-  margin-top: 9rem;
+  margin-top: 10rem;
   vertical-align: middle;
   text-align: left;
   letter-spacing: 0.1rem;
@@ -73,10 +72,11 @@ nav ul {
 nav li {
   display: block;
   margin: 0.5rem 0;
+  padding-left: 1rem;
 }
 
 nav ul a {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: #333;
   background-color: #fff;
@@ -122,6 +122,7 @@ nav ul .active a {
   background-color: #fff;
   margin-top: 5rem;
   margin-left: 12rem;
+  padding: 1rem;
 }
 
 #contentIntro h2 {
@@ -287,6 +288,7 @@ nav ul .active a {
     background-color: #fff;
     margin-left: 66.5rem;
     margin-top: 0rem;
+    padding: 0rem;
   }
 
   #contentIntro h2 {
@@ -324,6 +326,7 @@ nav ul .active a {
     height: 4.5rem;
     margin-top: 1.1rem;
     background-color: rgb(224,192,130);
+    position: relative;
   }
 
   #wrapper > footer p {

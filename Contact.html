@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Contact - Kjen Relaes</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./css/Contact.css">
 	<link rel="stylesheet" href="./css/start.css">
 	<link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
@@ -19,13 +20,14 @@
 			<nav>
 				<h2 class="structural">Hoofdmenu</h2>
 				<ul>
-					<a href="index.html"><li class="active">Home</li></a><a href="AboutUs.html"><li>About Us</li></a><a href="Services.html"><li>Services</li></a><a href="Contact.html"><li>Contact</li></a>
+					<li><a href="index.html" class="active">Home</a></li><li><a href="AboutUs.html">About Us</a></li><li><a href="Services.html">Services</a></li><li><a href="Contact.html">Contact</a></li>
 				</ul>
 			</nav>
 		</header>
 
 		<div id="content" class="clearfix">
 			<section>
+				<h2 class="structural">Image top</h2>
 				<img src="img/ContactGarden.jpg" alt="Garden">
 			</section>
 
@@ -35,6 +37,7 @@
 				</h2>
 			</section>
 			<section id="left">
+				<h2 class="structural">Left side</h2>
 				<section>
 					<h3>
 						Adres:
@@ -69,6 +72,7 @@
 				</section>
 			</section>
 			<section id="middle">
+				<h2 class="structural">Middle area</h2>
 				<h3>
 					Follow us
 				</h3>
@@ -77,11 +81,15 @@
 				<a href="https://facebook.com/"><img src="img/facebook-icon.png" alt="facebook"></a>			
 			</section>
 			<section id="right">
+				<h2 class="structural">Right area</h2>
 				<form action="#">
 					<fieldset>
 						<dl>
+							<dt><label for="Naam">Naam:</label></dt>
      						<dd><input type="text" name="Naam" id="Naam" placeholder="Naam" /></dd>
-     						<dd><input type="mail" name="Email" id="Email" placeholder="Email" /></dd>
+     						<dt><label for="Email">Email:</label></dt>
+     						<dd><input type="text" name="Email" id="Email" placeholder="Email" /></dd>
+     						<dt><label for="Onderwerp">Bericht:</label></dt>
      						<dd><input type="text" name="Onderwerp" id="Onderwerp" placeholder="Onderwerp" /></dd>
      						<dd><textarea id="Bericht" name="Bericht" cols="40" rows="5" placeholder="Bericht"></textarea></dd>
 						</dl>

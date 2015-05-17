@@ -38,21 +38,20 @@ body {
 
 #wrapper > header h1 a {
   background-image: url(../img/logo.png);
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   position: absolute;
   margin-top: 3rem;
-  float: left;
   background-repeat: no-repeat;
 }
 
 .logoTitle {
   position: absolute;
-  margin-top: 4.5rem;
-  font-size: 1.8rem;
+  margin-top: 5.5rem;
+  font-size: 2.8rem;
   text-decoration: none;
   color: #706041;
-  margin-left: 8.5rem;
+  margin-left: 10rem;
   font-weight: 200;
 }
 
@@ -63,7 +62,7 @@ nav ul {
   background-color: #FFF;
   position: relative;
   float: left;
-  margin-top: 9rem;
+  margin-top: 10rem;
   vertical-align: middle;
   text-align: left;
   letter-spacing: 0.1rem;
@@ -72,10 +71,11 @@ nav ul {
 nav li {
   display: block;
   margin: 0.5rem 0;
+  padding-left: 1rem;
 }
 
 nav ul a {
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: #333;
   background-color: #fff;
@@ -108,7 +108,7 @@ nav ul .active a {
 }
 
 #content #left p {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   color: #E0C082;
   margin-top: 2rem;
   font-weight: bold;
@@ -207,6 +207,10 @@ nav ul .active a {
   margin-left: 4rem;
 }
 
+/* ===============
+   Media queries
+   =============== */
+
 @media (min-width: 62.5em) {
  #wrapper {
     margin: 0 auto;
@@ -295,7 +299,7 @@ nav ul .active a {
   }
 
   #content #left {
-    width: 18rem;
+    width: 18.75%;
     float: left;
   }
 
@@ -312,7 +316,7 @@ nav ul .active a {
   }
 
   #content #middle {
-    width: 54rem;
+    width: 56.25%;
     float: left;
     margin-left: 0rem;
   }
@@ -348,7 +352,7 @@ nav ul .active a {
   }
 
   #content #right {
-    width: 17.5rem;
+    width: 18.22%;
     float: right;
   }
 

@@ -28,7 +28,6 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
 /*********************************************
  * HEADER
  *********************************************/
@@ -38,22 +37,20 @@ body {
 
 #wrapper > header h1 a {
   background-image: url(../img/logo.png);
-  width: 20rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   position: absolute;
   margin-top: 3rem;
-  margin-left: -5rem;
-  float: left;
   background-repeat: no-repeat;
 }
 
 .logoTitle {
   position: absolute;
-  margin-top: 7rem;
-  font-size: 3.2rem;
+  margin-top: 5.5rem;
+  font-size: 2.8rem;
   text-decoration: none;
   color: #706041;
-  margin-left: 8.5rem;
+  margin-left: 10rem;
   font-weight: 200;
 }
 
@@ -62,29 +59,25 @@ body {
 nav ul {
   list-style: none;
   background-color: #FFF;
-  width: 70rem;
   position: relative;
-  float: right;
-  margin-top: 7.5rem;
-  margin-right: 0rem;
+  float: left;
+  margin-top: 10rem;
   vertical-align: middle;
-  text-align: right;
+  text-align: left;
   letter-spacing: 0.1rem;
 }
 
 nav li {
-  display: inline-block;
+  display: block;
+  margin: 0.5rem 0;
+  padding-left: 1rem;
 }
 
 nav ul a {
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   text-decoration: none;
   color: #333;
   background-color: #fff;
-  padding: 0.6rem 2rem;
-  height: 2.4rem;
-  line-height: 2.4rem;
-
 }
 
 nav ul a:hover {
@@ -105,6 +98,7 @@ Main content
 
 #content section img {
   margin-top: 0.1rem;
+  width: 30rem;
 }
 
 #content section h2 {
@@ -112,10 +106,10 @@ Main content
   color: #E0C082;
   margin-top: 2rem;
   font-weight: bold;
+  width: 30rem;
 }
 
 #content #left {
-  float: left;
 }
 
 #content #left section h3 {
@@ -124,7 +118,6 @@ Main content
   font-weight: bold;
   margin-left: 2rem;
   margin-top: 1.5rem;
-  float: 
 }
 
 #content #left section p {
@@ -133,15 +126,12 @@ Main content
   margin-left: 2rem;
 }
 
-#content #middle {
-  float: left;
-}
 
 #content #middle h3 {
   font-size: 1.5rem;
   color: #666666;
   font-weight: bold;
-  margin-left: 6rem;
+  margin-left: 2rem;
   margin-top: 1.5rem;
 }
 
@@ -159,7 +149,6 @@ Main content
 }
 
 #content #right form fieldset dl {
-  float: right;
   margin-top: 1.5rem;
 }
 
@@ -183,6 +172,10 @@ Main content
   padding: 0.2rem;
 }
 
+#content #right form fieldset dl dt {
+  display: none;
+}
+
 #content #right input {
   background-color: grey;
   color: #fff;
@@ -192,17 +185,18 @@ Main content
   text-transform: uppercase;
   margin-top: 1rem;
   letter-spacing: 0.1rem;
-  float: right;
 }
+
 /* ===========================================
-Footer
-=========================================== */
+   Footer
+   =========================================== */
 
 #wrapper > footer {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   float: left;
-  width: 96rem;
-  height: 4.5rem;
+  width: 30rem;
+  position: absolute;
+  height: 10rem;
   margin-top: 1.1rem;
   background-color: rgb(224,192,130);
 }
@@ -216,7 +210,215 @@ Footer
 #wrapper > footer a img {
   width: 2.2rem;
   height: 2.2rem;
-  float: right;
-  margin-top: -2rem;
-  margin-right: 1rem;
+  float: left;
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+/* ===============
+   Media queries
+   =============== */
+
+@media (min-width: 62.5em) {
+ #wrapper {
+    margin: 0 auto;
+    min-width: 32rem;
+    max-width: 96rem;
+  }
+
+  /*********************************************
+   * HEADER
+   *********************************************/
+  #wrapper > header {
+    position: relative;
+  }
+
+  #wrapper > header h1 a {
+    background-image: url(../img/logo.png);
+    width: 20.8%;
+    height: 10rem;
+    position: absolute;
+    margin-top: 3rem;
+    margin-left: -5rem;
+    float: left;
+    background-repeat: no-repeat;
+  }
+
+  .logoTitle {
+    position: absolute;
+    margin-top: 7rem;
+    font-size: 3.2rem;
+    text-decoration: none;
+    color: #706041;
+    margin-left: 8.5rem;
+    font-weight: 200;
+  }
+
+  /* menu */
+
+  nav ul {
+    list-style: none;
+    background-color: #FFF;
+    width: 72.91%;
+    position: relative;
+    float: right;
+    margin-top: 7.5rem;
+    margin-right: 0rem;
+    vertical-align: middle;
+    text-align: right;
+    letter-spacing: 0.1rem;
+  }
+
+  nav li {
+    display: inline-block;
+  }
+
+  nav ul a {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #333;
+    background-color: #fff;
+    padding: 0.6rem 2rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+
+  }
+
+  nav ul a:hover {
+    background: rgb(224,192,130);
+  }
+
+  nav ul .active a {
+    background: rgb(236,217,180);
+  }
+
+/* ===========================================
+Main content
+=========================================== */
+
+  #content {
+    margin-top: 3rem;
+  }
+
+  #content section img {
+    margin-top: 0.1rem;
+    width: auto;
+  }
+
+  #content section h2 {
+    font-size: 2.8rem;
+    color: #E0C082;
+    margin-top: 2rem;
+    font-weight: bold;
+    width: auto;
+  }
+
+  #content #left {
+    float: left;
+  }
+
+  #content #left section h3 {
+    font-size: 1.5rem;
+    color: #456660;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 1.5rem; 
+  }
+
+  #content #left section p {
+    font-size: 1.5rem;
+    color: #333333;
+    margin-left: 2rem;
+  }
+
+  #content #middle {
+    float: left;
+  }
+
+  #content #middle h3 {
+    font-size: 1.5rem;
+    color: #666666;
+    font-weight: bold;
+    margin-left: 6rem;
+    margin-top: 1.5rem;
+  }
+
+  #content #middle a:first-of-type {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 6rem;
+  }
+
+  #content #middle a img {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: 0.2rem;
+    margin-top: 1rem;
+  }
+
+  #content #right form fieldset dl {
+    float: right;
+    margin-top: 1.5rem;
+  }
+
+  #content #right form fieldset dl dd input {
+    background-color: rgb(236,217,180);
+    border: none;
+    font-size: 1.3rem;
+    width: 31rem;
+    height: 3.5rem;
+    margin: 0.2rem 0;
+    padding: 0.2rem;
+  }
+
+  #content #right form fieldset dl dd textarea {
+    background-color: rgb(236,217,180);
+    border: none;
+    font-size: 2rem;
+    width: 31rem;
+    margin: 0.2rem 0;
+    height: 13rem;
+    padding: 0.2rem;
+  }
+
+  #content #right input {
+    background-color: grey;
+    color: #fff;
+    width: 11.5rem;
+    height: 3rem;
+    border: none;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    letter-spacing: 0.1rem;
+    float: right;
+  }
+
+  /* ===========================================
+     Footer
+     =========================================== */
+
+  #wrapper > footer {
+    font-size: 1.3rem;
+    float: left;
+    width: 100%;
+    height: 4.5rem;
+    margin-top: 1.1rem;
+    background-color: rgb(224,192,130);
+    position: relative; 
+  }
+
+  #wrapper > footer p {
+    padding-top: 1.5rem;
+    padding-left: 1.2rem;
+    color:#FFF;
+  }
+
+  #wrapper > footer a img {
+    width: 2.2rem;
+    height: 2.2rem;
+    float: right;
+    margin-top: -2rem;
+    margin-right: 1rem;
+    margin-left: 0rem;
+  }
 }
