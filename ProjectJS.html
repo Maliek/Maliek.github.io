@@ -2,51 +2,47 @@
 <html lang="en">
 <head>
 	<title>Project JavaScript</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<link rel="stylesheet" href="./css/project.css">
 	<link rel="stylesheet" href="./css/start.css">
-	<link href='http://fonts.googleapis.com/css?family=Spinnaker' rel='stylesheet' type='text/css'>
 	<meta charset="utf-8" />
 </head>
 <body>
 	<div id="wrapper">
 		<header class="clearfix">
-			<h1><a href="index.html" class="logoTitlest">Google Maps Checker</a></h1>
+			<h1 ><a href="">Google Maps Checker</a></h1>
+			<div id="form">
+				<div>
+					<label for="start" class="clearfix">Start</label>
+					<input type="search" placeholder="Start point" id="start">
+				</div>
+				<div>
+					<label for="finish" class="clearfix">Finish</label>
+					<input type="search" placeholder="Finish point" id="finish">
+				</div>
+				<div>
+					<label for="transport" class="clearfix">Transport method</label>
+					<select name="transport" id="transport">
+						<option value="car">Car</option>
+						<option value="bike">Bike</option>
+						<option value="walk">Foot</option>
+					</select>
+				</div>
+				<div>
+					<button id="edit">Edit</button>
+					<div id="dialog-confirm"></div>
+					<button id="btnCalc">Calculate</button>
+				</div>
+			</div>
 		</header>
-		<select id="content" class="clearfix">
-			<h2 class="structtural">Travel form</h2>
-			<form action = "#" method="post" id ="travelForm">
-				<dt>
-					<label for="from">
-						Start position
-					</label
-				</dt>
-				<dd>
-					<input type="text" name="start" id="start" placeholder="Start position">
-					<span class="error" id="errorStart">&nbsp;</span>
-				</dd>
-				<dt>
-					<label for="goal" class="structural">Goal:</label>
-				</dt>
-				<dd>
-					<input type="text" name="goal" id="goal" placeholder="Choose goal" value="">
-					<span class="error" id="errorGoal">&nbsp;</span>
-				</dd>
-				<dt>
-					
-				</dt>
-			</form>
-		</select>
-		<div id="content" class="clearfix">
-			
-		</div>
 
-
-		<footer>
-			<p>
-				&copy; by Meersschaert Maliek.
-			</p>
-		</footer>
+		<section>
+			<div id="map"></div>
+		</section>
 	</div>
+<script src="js/jquery-2.1.4.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcdoaqNVdP_6RuhPLr8zSgLYrDA-s3Elk" async defer></script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
 </body>
 </html>
