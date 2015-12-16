@@ -23,7 +23,7 @@
             this.map = new google.maps.Map(document.getElementById('map'), {
                 center: belgium, // Brussels by default
                 scroll: false,
-                zoom: 10
+                zoom: 7
             });
 
             // Try to use geolocation
@@ -33,7 +33,7 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     }
-                    mapsCheck.mapsModule.map.setCenter(coords);
+                    map.mapsModule.map.setCenter(coords);
                 });
             }
 
@@ -43,9 +43,9 @@
 
             // Recenter map on browser resize. credit: http://codepen.io/jamesnew/pen/HGnrw
             google.maps.event.addDomListener(window, "resize", function() {
-                var center = mapsCheck.mapsModule.map.getCenter();
-                google.maps.event.trigger(mapsCheck.mapsModule.map, "resize");
-                mapsCheck.mapsModule.map.setCenter(center);
+                var center = map.mapsModule.map.getCenter();
+                google.maps.event.trigger(map.mapsModule.map, "resize");
+                map.mapsModule.map.setCenter(center);
             });
 
             // Initialize Directions service
