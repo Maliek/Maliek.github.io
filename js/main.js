@@ -33,7 +33,7 @@
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
                     }
-                    map.mapsModule.map.setCenter(coords);
+                    mapsModule.map.setCenter(coords);
                 });
             }
 
