@@ -15,46 +15,35 @@
 	}
 
 	var init = function() {
-            var belgium = {
-                lat: 50.5,
-                lng: 4.2
-            }
+		var belgium = {
+			lat: 50.5,
+			lng: 4.2
+		}
 
-            this.map = new google.maps.Map(document.getElementById('map'), {
-                center: belgium, // Brussels by default
-                scroll: false,
-                zoom: 7
-            });
+		this.map = new google.maps.Map(document.getElementById('map'), {
+			center: belgium, //	Default location (belgium)
+			scroll: false,
+			zoom: 7
+		});
 
-            // Try to use geolocation
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function(position) {
-                    var coords = {
-                        lat: position.coords.latitude,
-                        lng: position.coords.longitude
-                    }
-                    mapsModule.map.setCenter(coords);
-                });
-            }
+		// Traffic colors (overlay)
+		var trafficLayer = new google.maps.TrafficLayer();
+		trafficLayer.setMap(this.map);
 
-            // Overlay traffic colors
-            var trafficLayer = new google.maps.TrafficLayer();
-            trafficLayer.setMap(this.map);
+		// Recenter map on browser resize. credit: http://codepen.io/jamesnew/pen/HGnrw
+		google.maps.event.addDomListener(window, "resize", function() {
+			var center = map.mapsModule.map.getCenter();
+			google.maps.event.trigger(map.mapsModule.map, "resize");
+			map.mapsModule.map.setCenter(center);
+		});
 
-            // Recenter map on browser resize. credit: http://codepen.io/jamesnew/pen/HGnrw
-            google.maps.event.addDomListener(window, "resize", function() {
-                var center = map.mapsModule.map.getCenter();
-                google.maps.event.trigger(map.mapsModule.map, "resize");
-                map.mapsModule.map.setCenter(center);
-            });
+		// Initialize Directions service
+		this.directionsService = new google.maps.DirectionsService();
+		this.directionsRenderer = new google.maps.DirectionsRenderer();
 
-            // Initialize Directions service
-            this.directionsService = new google.maps.DirectionsService();
-            this.directionsRenderer = new google.maps.DirectionsRenderer();
-
-            // Initialize Distance Matrix service
-            this.distanceMatrixService = new google.maps.DistanceMatrixService;
-        }
+		// Initialize Distance Matrix service
+		this.distanceMatrixService = new google.maps.DistanceMatrixService;
+		}
 
 	var calculate = function() {
 		var start = document.getElementById('start').value;
@@ -62,19 +51,6 @@
 		var transport = document.getElementById('transport').value;
 		var btnCalc = document.getElementById('btnCalc');
 		var edit = document.getElementById('edit');
-		
-        /*
-		var directionsService = new google.maps.DirectionsService();
-		var directionsDisplay = new google.maps.DirectionsRenderer();
-		var distanceService = new google.maps.DistanceMatrixService();
-		map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 7,
-			center: {lat: 50.43, lng: 4.36}
-		});
-		directionsDisplay.setMap(map);
-		var trafficLayer = new google.maps.TrafficLayer();
-		trafficLayer.setMap(map);
-		*/
 		
 		btnCalc.addEventListener('click', function() {
 			start = document.getElementById('start').value;
