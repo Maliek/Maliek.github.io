@@ -14,13 +14,56 @@
 		document.getElementById('transport').value = localStorage.getItem('transport');
 	}
 
+	var init = function() {
+            var belgium = {
+                lat: 50.5,
+                lng: 4.2
+            }
+
+            this.map = new google.maps.Map(document.getElementById('map'), {
+                center: belgium, // Brussels by default
+                scroll: false,
+                zoom: 10
+            });
+
+            // Try to use geolocation
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var coords = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    }
+                    mapsCheck.mapsModule.map.setCenter(coords);
+                });
+            }
+
+            // Overlay traffic colors
+            var trafficLayer = new google.maps.TrafficLayer();
+            trafficLayer.setMap(this.map);
+
+            // Recenter map on browser resize. credit: http://codepen.io/jamesnew/pen/HGnrw
+            google.maps.event.addDomListener(window, "resize", function() {
+                var center = mapsCheck.mapsModule.map.getCenter();
+                google.maps.event.trigger(mapsCheck.mapsModule.map, "resize");
+                mapsCheck.mapsModule.map.setCenter(center);
+            });
+
+            // Initialize Directions service
+            this.directionsService = new google.maps.DirectionsService();
+            this.directionsRenderer = new google.maps.DirectionsRenderer();
+
+            // Initialize Distance Matrix service
+            this.distanceMatrixService = new google.maps.DistanceMatrixService;
+        }
+
 	var calculate = function() {
 		var start = document.getElementById('start').value;
 		var finish = document.getElementById('finish').value;
 		var transport = document.getElementById('transport').value;
 		var btnCalc = document.getElementById('btnCalc');
 		var edit = document.getElementById('edit');
-
+		
+        /*
 		var directionsService = new google.maps.DirectionsService();
 		var directionsDisplay = new google.maps.DirectionsRenderer();
 		var distanceService = new google.maps.DistanceMatrixService();
@@ -31,7 +74,7 @@
 		directionsDisplay.setMap(map);
 		var trafficLayer = new google.maps.TrafficLayer();
 		trafficLayer.setMap(map);
-
+		*/
 		
 		btnCalc.addEventListener('click', function() {
 			start = document.getElementById('start').value;
@@ -85,6 +128,7 @@
 	window.addEventListener("load", function () {
 		loadFromStorage();
 		calculate();
+		init();
 	});
 
 	var disableForm = function() {
