@@ -22,9 +22,9 @@
 				<div>
 					<label for="transport" class="clearfix">Transport method</label>
 					<select name="transport" id="transport">
-						<option value="car">Car</option>
-						<option value="bike">Bike</option>
-						<option value="walk">Foot</option>
+						<option value="DRIVING">Car</option>
+						<option value="BICYCLING">Bike</option>
+						<option value="WALKING">Foot</option>
 					</select>
 				</div>
 				<div>
@@ -35,8 +35,16 @@
 			</div>
 		</header>
 
-		<section>
+		<section class="clearfix">
 			<div id="map"></div>
+			<p id="estimate">Google's estimate (in minutes): <span class='result'></span></p>
+		</section>
+		<section class="TIME">
+			<div class="clearfix">
+				<label for="timeLog" class="clearfix">Your time (in minutes):</label>
+				<input type="search" placeholder="" id="timeLog">
+				<button id="btnLog">Add Time</button>
+			</div>
 		</section>
 	</div>
 <script src="js/jquery-2.1.4.js"></script>

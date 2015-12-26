@@ -114,3 +114,16 @@ input, select, button {
 #btnCalc {
     margin-bottom: 2rem;
 }
+
+#estimate {
+    text-transform: uppercase;
+    letter-spacing: 0.3rem;
+}
+
+.result {
+    font-size: 1.5rem;
+}
+
+.TIME {
+    margin-top: 2rem;
+}
