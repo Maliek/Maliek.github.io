@@ -6,6 +6,7 @@
 (function() {
 
 	var map;
+	var graph;
 
 	//Load data from localStorage into their inputs
 	var loadFromStorage = function() {
@@ -135,8 +136,32 @@
 			}	callback(response.routes[0].legs[0].duration.value);
 			
 		});
-	}
-		
+	}		
+
+	//chart part (http://stackoverflow.com/questions/20801171/how-to-retrieve-the-data-from-localstorage-in-the-order-we-set-it)
+	var getDataValues = function() {
+		var data = [];
+		var item = JSON.parse(localStorage.getItem('data'));
+		item.forEach(function(key, val){
+			data.push(key.value);
+		});
+		return data;
+		console.log(data);
+	};
+
+	btnLog.addEventListener('click', function()  {
+		var log = document.getElementById('timeLog').value;
+		if (isNumber(log)) {
+			console.log("yes");
+		} else {
+			console.log("nooo");
+		}
+		getDataValues();
+	});
+
+	function isNumber(n) {
+		return !isNaN(parseFloat(n)) && isFinite(n);
+	};
 
 	window.addEventListener("load", function () {
 		loadFromStorage();
