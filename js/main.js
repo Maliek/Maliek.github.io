@@ -7,6 +7,7 @@
 
 	var map;
 	var graph;
+	var timeGoogle;
 
 	//Load data from localStorage into their inputs
 	var loadFromStorage = function() {
@@ -70,12 +71,13 @@
 		});
 
 		var setExpected = function(expected) {
-			var googleTravelTime = parseInt(expected / 60,10);
-			document.querySelector('.result').innerHTML = googleTravelTime;
+			timeGoogle = parseInt(expected / 60,10);
+			document.querySelector('.result').innerHTML = timeGoogle;
 			disableForm();
 		}
 
 		function fnOpenNormalDialog() {
+		clearLogs();
 		$("#dialog-confirm").html("Are you sure you want to edit the data?");
 
 		// Define the Dialog and its properties.
@@ -109,6 +111,7 @@
 		}
 	}
 
+	//http://stackoverflow.com/questions/9713058/sending-post-data-with-a-xmlhttprequest
 	var durationInTraffic = function(start, finish, transport, callback) {
 		var params = 'start='+start+'&finish='+finish+'&transport='+transport;
 		var address = './distance.php';
@@ -123,6 +126,13 @@
 		req.open('POST',address);
 		req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 		req.send(params);
+	}
+
+	var clearLogs = function() {
+		localStorage.removeItem('data');
+		localStorage.removeItem('start');
+		localStorage.removeItem('finish');
+		localStorage.removeItem('transport');
 	}
 
 	var calculateAndDisplayRoute = function(directionsService, directionsDisplay, start, finish, transport, callback) {
@@ -146,18 +156,95 @@
 			data.push(key.value);
 		});
 		return data;
-		console.log(data);
+	};
+
+	var getGoogleValues = function() {
+		var data = [];
+		var item = JSON.parse(localStorage.getItem('data'));
+		item.forEach(function(key, val){
+			data.push(key.google);
+		});
+		return data;
+	};
+
+	var getTime = function() {
+		var data = [];
+		var item = JSON.parse(localStorage.getItem('data'));
+		item.forEach(function(key, val){
+			var date = new Date(key.time),
+				mm = date.getMonth() + 1,
+				h = (date.getHours()<10?'0':'') + date.getHours(),
+				m = (date.getMinutes()<10?'0':'') + date.getMinutes();			
+			data.push(date.getDate() + "/" + mm + " - " + h  + ":" + m);
+		});
+		return data;
 	};
 
 	btnLog.addEventListener('click', function()  {
 		var log = document.getElementById('timeLog').value;
 		if (isNumber(log)) {
-			console.log("yes");
+			console.log("is a number");
+			var data = JSON.parse(localStorage.getItem('data')) || [];
+			data.push({
+				time: Date.now(),
+				value: log,
+				google: (timeGoogle ? timeGoogle : (data.length ? data[data.length-1].google : 0))
+			});
+			localStorage.setItem('data',JSON.stringify(data));
+			createGraph();			
 		} else {
-			console.log("nooo");
+			console.log("is not a number");
 		}
-		getDataValues();
 	});
+
+	//http://www.chartjs.org/docs/#line-chart
+	var createGraph = function() {
+		graph ? graph.destroy() : null;
+		var canvas = document.getElementById('graph').getContext('2d');
+		Chart.defaults.global.responsive = true;
+		var data = {
+			labels: getTime(),
+			datasets: [
+			{
+				label: 'Your time',
+				fillColor: "rgba(220,220,220,0.2)",
+				strokeColor: "rgba(220,220,220,1)",
+				pointColor: "rgba(220,220,220,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(220,220,220,1)",
+				data: getDataValues()
+			}, {
+				label: 'Googles time',
+				fillColor: "rgba(151,187,205,0.2)",
+				strokeColor: "rgba(151,187,205,1)",
+				pointColor: "rgba(151,187,205,1)",
+				pointStrokeColor: "#fff",
+				pointHighlightFill: "#fff",
+				pointHighlightStroke: "rgba(151,187,205,1)",
+				data: getGoogleValues()
+			}
+			]
+		};
+		var options = {
+			scaleShowGridLines : true,
+			scaleGridLineColor : "rgba(0,0,0,.05)",
+			scaleGridLineWidth : 1,
+			scaleShowHorizontalLines: true,
+			scaleShowVerticalLines: true,
+			bezierCurve : true,
+			bezierCurveTension : 0.4,
+			pointDot : true,
+			pointDotRadius : 4,
+			pointDotStrokeWidth : 1,
+			pointHitDetectionRadius : 20,
+			datasetStroke : true,
+			datasetStrokeWidth : 2,
+			datasetFill : true,
+			multiTooltipTemplate: "<%= datasetLabel %>: <%= value %> minutes"
+			};
+		graph = new Chart(canvas).Line(data, options);
+	};
 
 	function isNumber(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
