@@ -14,10 +14,12 @@
 				<div>
 					<label for="start" class="clearfix">Start</label>
 					<input type="search" placeholder="Start point" id="start">
+					<span id="errStart"></span>
 				</div>
 				<div>
 					<label for="finish" class="clearfix">Finish</label>
 					<input type="search" placeholder="Finish point" id="finish">
+					<span id="errFinish"></span>
 				</div>
 				<div>
 					<label for="transport" class="clearfix">Transport method</label>
@@ -26,6 +28,7 @@
 						<option value="BICYCLING">Bike</option>
 						<option value="WALKING">Foot</option>
 					</select>
+					<span id="errTransport"></span>
 				</div>
 				<div>
 					<button id="edit">Edit</button>
@@ -44,17 +47,20 @@
 				<label for="timeLog" class="clearfix">Your time (in minutes):</label>
 				<input type="search" placeholder="" id="timeLog">
 				<button id="btnLog">Add Time</button>
+				<span id="errLog"></span>
 			</div>
 			<div>
 				<canvas id="graph"></canvas>
 			</div>
+			<button id="btnSave">Save graph</button>
+			<div id="saved"></div>
 		</section>
 	</div>
 <script src="js/jquery-2.1.4.js"></script>
 <script src="js/jquery-ui.min.js"></script>
 <script src="js/main.js"></script>
 <script src="js/Chart.js"></script>
+<script src="js/pablo.min.js"></script> 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBcdoaqNVdP_6RuhPLr8zSgLYrDA-s3Elk" async defer></script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
 </body>
 </html>

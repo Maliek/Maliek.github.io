@@ -127,3 +127,7 @@ input, select, button {
 .TIME {
     margin-top: 2rem;
 }
+
+div span {
+    display: block;
+}

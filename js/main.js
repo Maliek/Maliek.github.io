@@ -183,7 +183,6 @@
 	btnLog.addEventListener('click', function()  {
 		var log = document.getElementById('timeLog').value;
 		if (isNumber(log)) {
-			console.log("is a number");
 			var data = JSON.parse(localStorage.getItem('data')) || [];
 			data.push({
 				time: Date.now(),
@@ -193,7 +192,7 @@
 			localStorage.setItem('data',JSON.stringify(data));
 			createGraph();			
 		} else {
-			console.log("is not a number");
+			document.getElementById("errLog").innerHTML = "Please enter a number";
 		}
 	});
 
@@ -207,12 +206,12 @@
 			datasets: [
 			{
 				label: 'Your time',
-				fillColor: "rgba(220,220,220,0.2)",
-				strokeColor: "rgba(220,220,220,1)",
-				pointColor: "rgba(220,220,220,1)",
+				fillColor: "rgba(112,96,65,0.2)",
+				strokeColor: "rgba(112,96,65,1)",
+				pointColor: "rgba(112,96,65,1)",
 				pointStrokeColor: "#fff",
 				pointHighlightFill: "#fff",
-				pointHighlightStroke: "rgba(220,220,220,1)",
+				pointHighlightStroke: "rgba(112,96,65,1)",
 				data: getDataValues()
 			}, {
 				label: 'Googles time',
@@ -232,7 +231,7 @@
 			scaleGridLineWidth : 1,
 			scaleShowHorizontalLines: true,
 			scaleShowVerticalLines: true,
-			bezierCurve : true,
+			bezierCurve : false,
 			bezierCurveTension : 0.4,
 			pointDot : true,
 			pointDotRadius : 4,
@@ -245,6 +244,25 @@
 			};
 		graph = new Chart(canvas).Line(data, options);
 	};
+
+	document.getElementById('btnSave').addEventListener('click', function() {
+		var pablo_svg = Pablo(document.getElementById('graph').getElementsByTagName('svg')[0]);
+		var data = pablo_svg.dataUrl();
+		$.ajax({ 
+			type: 'POST', 
+			url: 'store.php',
+			dataType: 'text',
+			data: {
+			base64data : data
+		}
+		}).done(function(resp) {
+			var newImg = document.createElement('IMG');
+			newImg.src = 'img/' + resp;
+			document.getElementById('saved').appendChild(newImg);
+		}).fail(function(resp) {
+			console.log('error');
+		});
+	});
 
 	function isNumber(n) {
 		return !isNaN(parseFloat(n)) && isFinite(n);
