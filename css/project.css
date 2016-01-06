@@ -131,3 +131,7 @@ input, select, button {
 div span {
     display: block;
 }
+
+#saved img {
+    border: 1px solid #ccc;
+}

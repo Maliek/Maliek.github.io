@@ -246,14 +246,13 @@
 	};
 
 	document.getElementById('btnSave').addEventListener('click', function() {
-		var pablo_svg = Pablo(document.getElementById('graph').getElementsByTagName('svg')[0]);
-		var data = pablo_svg.dataUrl();
+		var data = graph.toBase64Image();
 		$.ajax({ 
 			type: 'POST', 
 			url: 'store.php',
 			dataType: 'text',
 			data: {
-			base64data : data
+				base64data : data
 		}
 		}).done(function(resp) {
 			var newImg = document.createElement('IMG');
