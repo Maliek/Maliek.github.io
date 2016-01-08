@@ -229,6 +229,7 @@
 			scaleShowGridLines : true,
 			scaleGridLineColor : "rgba(0,0,0,.05)",
 			scaleGridLineWidth : 1,
+			animation: false,
 			scaleShowHorizontalLines: true,
 			scaleShowVerticalLines: true,
 			bezierCurve : false,
@@ -246,6 +247,7 @@
 	};
 
 	document.getElementById('btnSave').addEventListener('click', function() {
+		//graph = document.getElementById('graph').getContext('2d');
 		var data = graph.toBase64Image();
 		$.ajax({ 
 			type: 'POST', 
