@@ -9,7 +9,13 @@ body > * {
 body {
 	background-color: #fff;
 	font-family: 'Arial';
-	color: #424849;
+	color: #FFFFFF;
+}
+
+#wrapper {
+  margin: 0 auto;
+  min-width: 32rem;
+  max-width: 96rem;
 }
 
 ul {
@@ -19,12 +25,37 @@ ul {
 header {
   position: relative;
   float: left;
+  background-color: #993D3D;
+  width: 100%;
+  margin-bottom: 2rem;
 }
 
 h1 a {
-	color: #706041;
+	color: #FFFFFF;
 	position: relative;
-	margin-bottom: 10rem;
+	margin-bottom: 7rem;
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+div label {
+    margin-right: .3rem;
+}
+
+div input {
+    float: center;
+}
+
+#smallTitle {
+    font-size: 11px;
+    line-height: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-top: 2rem;
 }
 
 #form {
@@ -32,8 +63,14 @@ h1 a {
 }
 
 div label {
-	color: #000;
+	color: #FFFFFF;
 	font-size: 1.5rem;
+    margin-left: 1rem;
+}
+
+#transport {
+    float: right;
+    margin-right: 2rem;
 }
 
 div button {
@@ -41,14 +78,19 @@ div button {
 	margin-top: 1rem;
 }
 
+#btnCalc {
+    margin-right: -6rem;
+}
+
 input, select, button {
     border: none;
     text-decoration: none;
-    box-shadow: 0 0 0 0.1em #706041;
+    box-shadow: 0 0 0 0.1em #FFFFFF;
     margin: .2em;
     padding: .2em;
     border-radius: .2em;
     font-size: 1em;
+    margin-right: 1rem;
 }
 
 .no-close .ui-dialog-titlebar-close {
@@ -62,7 +104,7 @@ input, select, button {
 
 .ui-widget-content {
     background: #F9F9F9;
-    border: 1px solid #706041;
+    border: 1px solid #FFFFFF;
     color: #222222;
 }
 
@@ -88,7 +130,7 @@ input, select, button {
 }
 
 .ui-widget-header {
-    background: #706041;
+    background: #FFFFFF;
     border: 0;
     color: #fff;
     font-weight: normal;
@@ -105,19 +147,13 @@ input, select, button {
     height: 24em;
 }
 
-#wrapper {
-  margin: 0 auto;
-  min-width: 32rem;
-  max-width: 96rem;
-}
-
-#btnCalc {
-    margin-bottom: 2rem;
-}
-
 #estimate {
     text-transform: uppercase;
     letter-spacing: 0.3rem;
+    color: #993D3D;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
 }
 
 .result {
@@ -125,7 +161,7 @@ input, select, button {
 }
 
 .TIME {
-    margin-top: 2rem;
+    background-color: #FFFFFF;
 }
 
 div span {
@@ -134,4 +170,58 @@ div span {
 
 #saved img {
     border: 1px solid #ccc;
+}
+
+div input {
+    width: 25%;
+}
+
+div button {
+    color: #FFFFFF;
+    background-color: #993D3D;
+    width: 25%;
+    margin-right: 2rem;
+    float: right;
+    margin-bottom: 1rem;
+}
+
+#btnLog {
+    margin-top: -2.3rem;
+}
+
+#btnSave {
+    background-color: #993D3D;
+    color: #FFFFFF;
+}
+
+.TIME > div > div > label {
+    color: #993D3D;
+    text-transform: uppercase;
+}
+
+.TIME > div > div > input {
+    box-shadow: 0 0 0 0.1em #993D3D;
+    margin-left: 2rem;
+}
+
+.TIME > div > button {
+    padding: 0.5rem;
+}
+
+#btnSave {
+    padding: 0.5rem;
+}
+
+@media only screen and (max-device-width: 56rem)  {
+    #transport {
+        margin-right: 0rem;
+    }
+
+    #btnLog {
+        margin-top: 0rem;
+    }
+
+    #btnCalc {
+        margin-right: 0rem;
+    }
 }
